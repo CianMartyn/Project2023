@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Browser } from '@capacitor/browser';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-stories:any[]=[];
-  constructor() {}
-  
+standing: any;
+standings: any;
+  //browser plugin to url
+  async openBrowser() {
+    await Browser.open({ url: 'https://www.flashscore.com/' });
+  };
 }
